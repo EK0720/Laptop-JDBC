@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Laptop</title>
+</head>
+<body>
+	<div class="row">
+		<h1>Laptop</h1>
+	</div>
+	<form th:object="${laptop}" th:action="@{save/{id}(id=${laptop.id})}"
+		th:method="${id} < 0 ? POST : PUT">
+		ID: <input type="number" name="id" th:value="${laptop.id}"><br />
+		Name: <input type="text" name="name" th:value="${laptop.name}"><br />
+		Price: <input type="text" name="price" th:value="${laptop.price}"><br />
+		Brand: <input type="text" name="brand" th:value="${laptop.brand}"><br />
+		Date: <input type="Date" name="date" th:value="${laptop.date}"><br />
+		Paid: <input type="checkbox" name="paid" th:checked="${laptop.paid}"><br />
+		<input type="submit" value="Save Laptop">
+	</form>
+</body>
+</html>
